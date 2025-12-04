@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Syllabus | IT Computer Studies</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #f9fafb;
+      --accent: #1e3a8a;
+      --card-bg: #ffffff;
+      --border-radius: 12px;
+      --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--secondary);
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .accordion {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      border-left: 5px solid var(--primary);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: #eef2ff;
+      padding: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+      background: #e0e7ff;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s;
+      padding: 0 16px;
+    }
+
+    .accordion-content.open {
+      padding: 16px;
+      max-height: 1000px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .projects, .plan {
+      border-left: 5px solid #f59e0b;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .accordion-header {
+        font-size: 16px;
+      }
+
+      th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Python Programming Syllabus</h1>
+    <p>IT Computer Studies — Beginner Friendly, Practical Oriented</p>
+  </header>
+
+  <div class="container" id="accordion-container">
+    <!-- Dynamic content will be inserted here -->
+  </div>
+
+  <script>
+    const syllabus = [
+      {
+        title: "1. Introduction to Python",
+        items: [
+          "What is Python?",
+          "Features & Applications",
+          "Installing Python & First Program"
+        ]
+      },
+      {
+        title: "2. Python Basics",
+        items: [
+          "Keywords, Identifiers, Variables",
+          "Data Types: int, float, str, bool",
+          "Type Casting, Input/Output"
+        ]
+      },
+      {
+        title: "3. Operators",
+        items: [
+          "Arithmetic, Relational, Logical",
+          "Assignment & Bitwise (Intro)"
+        ]
+      },
+      {
+        title: "4. Conditional Statements",
+        items: [
+          "if, if-else, elif ladder",
+          "Nested Conditions"
+        ]
+      },
+      {
+        title: "5. Loops",
+        items: [
+          "while, for loop",
+          "break, continue, pass",
+          "range() usage"
+        ]
+      },
+      {
+        title: "6. Data Structures",
+        items: [
+          "Strings, Lists, Tuples",
+          "Dictionaries & Sets"
+        ]
+      },
+      {
+        title: "7. Functions",
+        items: [
+          "Built-in and User-defined",
+          "Arguments, Return",
+          "*args and **kwargs (Basic)"
+        ]
+      },
+      {
+        title: "8. File Handling",
+        items: [
+          "Open, Read, Write files",
+          "Modes: r, w, a"
+        ]
+      },
+      {
+        title: "9. Exception Handling",
+        items: [
+          "Try, Except, Finally",
+          "Raise (Intro)"
+        ]
+      },
+      {
+        title: "10. Modules & Libraries",
+        items: [
+          "Import modules",
+          "Using math, random, datetime"
+        ]
+      },
+      {
+        title: "🧑‍💻 Practical Projects",
+        items: [
+          "Calculator using if-else",
+          "Number Guessing Game",
+          "Word Counter",
+          "Marks Sheet using Dictionary",
+          "Basic To-do List"
+        ],
+        class: "projects"
+      },
+      {
+        title: "📅 Suggested Day-wise Plan",
+        html: `<table>
+          <tr><th>Topic</th><th>Days</th></tr>
+          <tr><td>Basics + Data Types</td><td>2</td></tr>
+          <tr><td>Operators + Conditions</td><td>2</td></tr>
+          <tr><td>Loops</td><td>2</td></tr>
+          <tr><td>Data Structures</td><td>3</td></tr>
+          <tr><td>Functions</td><td>2</td></tr>
+          <tr><td>File Handling</td><td>2</td></tr>
+          <tr><td>Exception + Modules</td><td>2</td></tr>
+          <tr><td>Projects + Practice</td><td>2–3</td></tr>
+        </table>`,
+        class: "plan"
+      }
+    ];
+
+    const container = document.getElementById("accordion-container");
+
+    syllabus.forEach(section => {
+      const wrapper = document.createElement("div");
+      wrapper.className = `accordion ${section.class || ''}`;
+
+      const header = document.createElement("div");
+      header.className = "accordion-header";
+      header.textContent = section.title;
+      wrapper.appendChild(header);
+
+      const content = document.createElement("div");
+      content.className = "accordion-content";
+
+      if (section.html) {
+        content.innerHTML = section.html;
+      } else {
+        const ul = document.createElement("ul");
+        section.items.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+        content.appendChild(ul);
+      }
+
+      wrapper.appendChild(content);
+      container.appendChild(wrapper);
+
+      header.addEventListener("click", () => {
+        content.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+</html>
